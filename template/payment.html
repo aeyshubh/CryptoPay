@@ -1,0 +1,40 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CryptoRazer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/payindex.css' %}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;700;900&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/binjay" rel="stylesheet">
+
+    <script src="scripts/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0/web3.min.js" integrity="sha512-C63V0mFzwl8KV2fRz0QJNKX0d9877urOLSUq5WUq8nUOhDl69hKdGr9mAvl57k47GNjqEMAtiufsvDnk7xs8+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="font-family:binjay;font-size:40px;">
+            <a href="/"><img src="{% static 'logo.png' %}" alt="CRYPTOPAY" height="60" width="220"></a>
+        </h1>
+        <form name="form" id="form" method="POST" action="paying">
+            {% csrf_token %}
+            <span class="error" id="userError" style="color: rgb(255, 80, 80); text-align: center;">&nbsp;</span>
+            <input type="text" id="userName" name="reciever" placeholder="Phone Number">
+            <span class="error" id="emailError" style="color: rgb(255, 80, 80); text-align: center;"> &nbsp;</span>
+            <input type="number" id="email" name="amount" placeholder="Amount(in matic)">
+            <input type="submit" name="submit" value="Pay">
+        </form>
+    </div>
+</body>
+
+
+</html>

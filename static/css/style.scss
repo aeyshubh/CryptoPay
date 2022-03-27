@@ -1,0 +1,164 @@
+body {
+    font-family: montserrat;
+    background: #fff;
+    width: 100%;
+}
+
+.head {
+    text-align: center;
+    font-size: 3em;
+}
+
+header {
+    max-height: 15vh;
+    .nav a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2em;
+        padding: .2em 1em;
+        font-size: 20px;
+        cursor: pointer;
+        background: #fcd12a;
+        &:hover {
+            background: #d5b85a;
+            color: #000;
+        }
+    }
+}
+
+.tagline {
+    line-height: 0px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.table {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    th {
+        margin: 10px;
+        width: 20vw;
+    }
+}
+
+.table tr:nth-child(1) {
+    font-size: 20px;
+}
+
+.table tr:nth-child(odd) {
+    background: #f1f1f1;
+}
+
+section .left button {
+    position: absolute;
+    top: 24em;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #fcd12a;
+    border-radius: 5px;
+    &:hover {
+        background: #d5b85a;
+    }
+}
+
+section .left button a {
+    text-decoration: none;
+    &:hover {
+        color: #000;
+    }
+}
+
+section h1 {
+    position: absolute;
+    top: 4em;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+section h2 {
+    position: absolute;
+    top: 4em;
+    left: 1em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    z-index: -1;
+    opacity: .3;
+}
+
+section .right {
+    margin: .2em 1em;
+    font-size: 6em;
+    font-weight: bold;
+    color: #fff;
+    -webkit-text-stroke: 1px #d5b85a;
+    padding: .5em;
+    font-family: gebrush;
+    i {
+        position: absolute;
+        right: 0;
+        margin: .4em 1em;
+        color: #fff;
+        -webkit-text-stroke: 1px #000;
+        z-index: -1;
+        transform: scale(.8);
+        font-family: montserrat;
+        opacity: .2;
+    }
+    i:before {
+        content: 'CRYPTOPAY';
+        position: absolute;
+        right: 0;
+        margin: -.8em 0em;
+        color: #fff;
+        -webkit-text-stroke: 1px #000;
+        z-index: -1;
+        opacity: 1;
+    }
+}
+
+.span {
+    position: absolute;
+    margin: -1.2em 1em;
+    right: 0;
+    font-size: 1em;
+    z-index: 1;
+    font-family: montserrat;
+    opacity: .5;
+}
+
+.sapn {
+    position: absolute;
+    margin: -1.5em 6em;
+    right: 0;
+    font-size: 1em;
+    z-index: 1;
+    opacity: .5;
+    font-family: montserrat;
+}
+
+.span1 {
+    position: absolute;
+    margin: 2em 5em;
+    right: 0;
+    font-size: 1em;
+    z-index: 1;
+    opacity: .5;
+    font-family: montserrat;
+}
+
+.sapn1 {
+    position: absolute;
+    margin: 1.6em 1.5em;
+    right: 0;
+    font-size: 1em;
+    z-index: 1;
+    opacity: .5;
+    font-family: montserrat;
+}

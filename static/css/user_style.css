@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: Montserrat;
+  background: #ffffff;
+}
+
+body .container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #28487d;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+body .container form input {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: montserrat;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-color: #28487d;
+  border-radius: 5px;
+}
+
+body .container form input[type="submit"] {
+  font-weight: bold;
+  border-color: #fcd12a;
+  color: #000;
+  background: #fcd12a;
+}
+
+body .container a {
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+}
+
+body .container a:hover {
+  font-weight: 500;
+}
+/*# sourceMappingURL=style.css.map */
