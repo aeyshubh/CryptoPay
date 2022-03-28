@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CryptoRazer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/user_style.css' %}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;700;900&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/binjay" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="font-family:binjay;font-size:40px;">
+            <a href="/"><img src="{% static 'logo.png' %}" alt="CRYPTOPAY" height="60" width="220"></a>
+        </h1>
+        <h2>Register</h2>
+        <form name="form"  id="form" method="POST">
+            {% csrf_token %}
+            <span class="error" id="userError" style="color: rgb(255, 80, 80); text-align: center;">&nbsp;</span>
+            <input type="text" id="userName" name="uname" placeholder="Username">
+            <span class="error" id="emailError" style="color: rgb(255, 80, 80); text-align: center;">&nbsp;</span>
+            <input type="email" id="email" name="waddress" placeholder="Wallet address">
+            <span class="error" id="phnoerror" style="color: rgb(255, 80, 80); text-align: center;">&nbsp;</span>
+            <input type="number" id="phno" name="mobile" placeholder="Phone Number" autocomplete="none">
+            <span class="error" id="cpassError" style="color: rgb(255, 80, 80); text-align: center;">&nbsp;</span>
+            <input type="password" id="cpass" name="password_1" placeholder="password" autocomplete="none">
+            <input type="password" id="cpass" name="password_2" placeholder="confirm password" autocomplete="none">
+            <input type="submit" name="submit" value="Register">
+            <a href="/login">Login Here</a>
+        </form>
+    </div>
+</body>
+
+<!--
+<script>
+    const userName = document.getElementById('userName');
+    const userError = document.getElementById('userError');
+    const email = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
+    const phno = document.getElementById('phno');
+    const phnoerror = document.getElementById('phnoerror');
+    const cpassword = document.getElementById('cpass');
+    const cpassError = document.getElementById('cpassError');
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', (e) => {
+
+        let msg = []
+        let emailerr = []
+        let phnoerror = []
+        let cpasserr = []
+
+        if (userName.value === '' || userName.value == null) {
+            msg.push('*Username cannot be blank.');
+            userName.style.border = "2px solid red";
+        } else {
+            msg.push('');
+            userName.style.border = "2px solid lime";
+        }
+        if (email.value === '' || email.value == null) {
+            emailerr.push('*Email cannot be blank.');
+            email.style.border = "2px solid red";
+        } else {
+            emailerr.push('');
+            email.style.border = "2px solid lime";
+        }
+
+        if (password.value === '' || password.value == null) {
+            phnoerror.push('*Phone Number cannot be blank.')
+            phno.style.border = "2px solid red";
+        } else {
+            phnoerror.push('');
+            phno.style.border = "2px solid lime";
+        }
+        if (cpassword.value === password.value && cpassword.value === '') {
+            cpasserr.push('*Password deos not match.')
+            cpass.style.border = "2px solid red";
+        } else {
+            cpasserr.push('');
+            cpass.style.border = "2px solid lime";
+        }
+
+        if (msg.length > 0) {
+            e.preventDefault();
+            userError.innerText = msg.join(',')
+        }
+        if (emailerr.length > 0) {
+            e.preventDefault();
+            emailError.innerText = emailerr.join(',')
+        }
+        if (phnoerror.length > 0) {
+            e.preventDefault();
+            phnoerror.innerText = phnoerror.join(',')
+        }
+        if (cpasserr.length > 0) {
+            e.preventDefault();
+            cpassError.innerText = cpasserr.join(',')
+        }
+    });
+
+</script>-->
+
+</html>

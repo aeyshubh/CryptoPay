@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doing Payment</title>
+    <script src="scripts/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0/web3.min.js" integrity="sha512-C63V0mFzwl8KV2fRz0QJNKX0d9877urOLSUq5WUq8nUOhDl69hKdGr9mAvl57k47GNjqEMAtiufsvDnk7xs8+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+    var contract;
+    //var py_receiver = 
+    $(document).ready(function()
+    {
+        web3 = new Web3(web3.currentProvider);
+
+        var address = "0xa89dd8A01D09565623AF716D074069cF68F1E9a1";
+        var abi = [
+        {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sendViaSend",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "receive"
+        }
+        ];
+
+        contract = new web3.eth.Contract(abi,address);
+        console.log("Fine");
+
+        if(window.ethereum){
+            web3 = new Web3(window.ethereum);
+            ethereum.enable();
+        }else if(window.web3){
+            web3 = new Web3(web3.currentProvider);
+        }
+    
+    });
+
+    function send()
+    {
+        console.log('INSIDE');
+        var amt = 0;
+        amt = $('#amount1').val();
+
+        amt = amt * 1000000000000000000;
+
+
+        var receiver_add = $('#walletAddress').val();
+        //sender = "0xc91a35AF656EA0329aEbB38fc618c4177b96142c";
+        console.log(amt);
+        console.log(receiver_add);
+
+
+        web3.eth.getAccounts().then(function(accounts)
+        {
+            var acc = accounts[0];
+            console.log(accounts[0]);
+            //return contract.methods.sendViaSend(receiver_add,amt).send({from:acc});
+            
+            return web3.eth.sendTransaction({ from: acc, to: py_receiver, value: amt });
+        }).then(function(tx){
+            console.log(tx);
+        }).catch(function(tx){
+            console.log(tx);
+        })
+        web3.eth.getBalance("0xc91a35AF656EA0329aEbB38fc618c4177b96142c").then(console.log);
+    }
+
+</script>
